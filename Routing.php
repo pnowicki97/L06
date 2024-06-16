@@ -1,7 +1,6 @@
 <?php
 
 require_once 'src/controllers/AppController.php';
-require_once 'src/controllers/DashboardController.php';
 require_once 'src/controllers/DesktopUserPageController.php';
 require_once 'src/controllers/DesktopGroupPageController.php';
 require_once 'src/controllers/MainController.php';

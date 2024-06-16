@@ -14,6 +14,17 @@ class UserRepository extends Repository {
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'User');
     }
 
+    public function getUsersByGroup(int $id) {
+        $stmt = $this->database->connect()->prepare('
+            SELECT u.* FROM public.users u left join users_groups ug on u.id = ug.user_id
+	        where ug.group_id = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS, 'User');
+    }
+
     public function getUser(int $id) {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users WHERE id = :id

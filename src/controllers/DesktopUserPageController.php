@@ -17,14 +17,14 @@ class DesktopUserPageController extends AppController {
 
     public function desktopUserPage() {
         return $this->render('desktop-user-page', [
-            "title"=> "PROJECTS | WDPAI", 
+            "title"=> "User | WDPAI", 
             "items" => $this->groupRepository->getGroupsByUser($_SESSION["user_id"])
         ]);
     }
 
     public function desktopAddGroup() {
         return $this->render('desktop-add-group', [
-            "title"=> "PROJECTS | WDPAI",
+            "title"=> "Add group | WDPAI",
             "items" => $this->userRepository->getUsers()
 
         ]);

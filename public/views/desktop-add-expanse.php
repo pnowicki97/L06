@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="public/css/main.css">
-    <script src="public/scripts/mobile-nav.js" defer></script>
     <title><?= $title; ?></title>
 </head>
 
@@ -17,8 +16,6 @@
     <div class="container flex-column-center-center">
 
         <label><?= $group[0]->getName(); ?></label>
-
-        <script src="public/scripts/search.js" defer></script>
 
         <template id="expanse-template">
             <div class="element">

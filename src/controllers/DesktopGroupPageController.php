@@ -21,7 +21,7 @@ class DesktopGroupPageController extends AppController {
     $id = array_keys($_POST)[0];
 
         return $this->render('desktop-group-page', [
-            "title"=> "PROJECTS | WDPAI", 
+            "title"=> "Groups | WDPAI", 
             "group" => $this->groupRepository->getGroupById($id),
             "items" => $this->expanseRepository->getExpansesByGroup($id)
         ]);
@@ -30,9 +30,9 @@ class DesktopGroupPageController extends AppController {
     public function desktopAddExpanse() {
     $id = array_keys($_POST)[0];
             return $this->render('desktop-add-expanse', [
-                "title"=> "PROJECTS | WDPAI",
+                "title"=> "Add Expanse | WDPAI",
                 "group" => $this->groupRepository->getGroupById($id),
-                "items" => $this->userRepository->getUsers()
+                "items" => $this->userRepository->getUsersByGroup($id)
 
             ]);
         }
@@ -50,7 +50,7 @@ class DesktopGroupPageController extends AppController {
             return;
 
             return $this->render('desktop-group-page', [
-                "title"=> "PROJECTS | WDPAI", 
+                "title"=> "Groups | WDPAI", 
                 "group" => $this->groupRepository->getGroupById($id),
                 "items" => $this->expanseRepository->getExpansesByGroup($id)
             ]);

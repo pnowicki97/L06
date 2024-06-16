@@ -46,12 +46,6 @@ class GroupRepository extends Repository {
 
     public function saveGroup($data) {
 
-        $stmt = $this->database->connect()->prepare('
-        SELECT id FROM public.groups ORDER BY id DESC LIMIT 1;
-        ');
-        $stmt->execute();
-        $id = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         $stmt = $this->database->connect()->prepare("
             INSERT INTO public.groups (name, \"photo_url\") VALUES (?, ?);
         ");
@@ -61,6 +55,13 @@ class GroupRepository extends Repository {
             $data["photoUrl"],
         ]);
 
+
+        $stmt = $this->database->connect()->prepare('
+        SELECT id FROM public.groups ORDER BY id DESC LIMIT 1;
+        ');
+        $stmt->execute();
+        $id = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
         if(empty($data["checkbox"])):
             return;
         endif;    

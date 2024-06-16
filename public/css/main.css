@@ -97,14 +97,14 @@ body {
 }
 
 .groups > .element {
-  width: calc(100% / 3);
+  width: calc(100% / 3 + 5%);
   border: 1px solid rgba(255,255,255,1);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 1em;
-  gap: 2em;
+  gap: 1em;
 }
 
 .groups > .element > .flex-row-center-center{
@@ -120,10 +120,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align:center;
-}
-
-.groups > .element > input{
-  transform: scale(4);
 }
 
 .groups > .element > img{
@@ -156,9 +152,6 @@ body {
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
   }
-
-
-
   .container {
     font-size: 15px;
     width: 90%;
@@ -171,7 +164,7 @@ body {
     height: 80%;
   }
   .groups > .element {
-    width: 100%;
+    width: 70%;
     height: 20px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
